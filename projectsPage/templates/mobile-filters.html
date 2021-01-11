@@ -1,0 +1,96 @@
+{% load static %}
+
+{% load static i18n %}
+
+<style type="text/css">
+  
+  .bootstrap-select>.dropdown-toggle:after {
+    margin-top: -1px;
+    font-size: 60px;
+  }
+
+  .filter-option{
+    font-size: 45px;
+    text-align: center !important;
+  }
+
+  .wrapper .main_content .info div {
+    margin-bottom: 0px;
+  }
+
+  .dropdown-menu .inner .show{
+    font-size: 50px;
+  }
+
+  .select-mine{
+    width:auto;
+    margin-bottom: 40px !important;
+  }
+
+  .bootstrap-select>.dropdown-toggle {
+    height: 100px !important;
+  }
+</style>
+
+<select id="selector" name="selValue" class="selectpicker form-control select-mine"
+  onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);">
+  
+  <option value="/projects?space=living room">
+    {% trans "Salas" %}
+  </option>
+  <option value="/projects?space=bedroom">
+    {% trans "Quartos" %}
+  </option>
+  <option value="/projects?space=home office">
+    {% trans "Escritórios" %}
+  </option>
+  <option value="/projects?space=bathroom">
+    {% trans "Banheiros" %}
+  </option>
+  <option value="/projects?space=kitchen">
+    {% trans "Cozinhas" %}
+  </option>
+  <option value="/projects?space=outside">
+    {% trans "Externas" %}
+  </option>
+  <option value="/projects?space=frontage">
+    {% trans "Fachadas" %}
+  </option>
+  <option value="/projects?space=restaurant">
+    {% trans "Restaurantes" %}
+  </option>
+  <option value="/projects?space=corporate">
+    {% trans "Corporativo / Comercial" %}
+  </option>
+  <option value="/projects?space=tcc">
+    {% trans "TCC" %}
+  </option>
+  <option value="/projects?space=360">
+    {% trans "360º" %}
+  </option>
+</select>
+
+<script type="text/javascript">
+  var selected_filter = "{{selected_filter}}";
+  $('select[name=selValue]').val("/projects?space="+selected_filter);
+  $('.selectpicker').selectpicker('refresh')
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

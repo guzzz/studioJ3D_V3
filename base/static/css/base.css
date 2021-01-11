@@ -1,0 +1,144 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+body{
+   background-color: #f3f5f9;
+}
+
+.wrapper{
+  display: flex;
+  position: relative;
+}
+
+.wrapper .sidebar{
+  width: 250px;
+  height: 100%;
+  background: #4b4276;
+  padding: 30px 0px;
+  position: fixed;
+}
+
+.wrapper .sidebar h2{
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.wrapper .sidebar ul li{
+  padding: 15px;
+  border-bottom: 1px solid #bdb8d7;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  border-top: 1px solid rgba(255,255,255,0.05);
+}    
+
+.wrapper .sidebar ul li a{
+  color: #07063f;
+  display: block;
+}
+
+.wrapper .sidebar ul li a .fas{
+  width: 25px;
+}
+
+.wrapper .sidebar ul li:hover{
+  background-color: #07063f;
+}
+    
+.wrapper .sidebar ul li:hover a{
+  color: #fff;
+}
+ 
+.wrapper .sidebar .social_media{
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+}
+
+.wrapper .sidebar .social_media a{
+  font-size: x-large;
+  display: block;
+  width: 40px;
+  line-height: 45px;
+  text-align: center;
+  margin: 0 5px;
+  color: #908f8f;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  margin-bottom: 100px
+}
+
+.wrapper .main_content{
+  width: 100%;
+}
+
+.wrapper .main_content .header{
+  padding: 10px;
+  background: #fff;
+  color: #717171;
+  border-bottom: 1px solid #e0e4e8;
+}
+
+.wrapper .main_content .info{
+  margin: 20px;
+  color: #717171;
+  line-height: 25px;
+}
+
+.wrapper .main_content .info div{
+  margin-bottom: 20px;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.no-ml{
+  margin-left: 0px;
+}
+
+
+.header-ml{
+  margin-left: -300px;
+}
+
+#tirinha-portfolio{
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+}
+
+@media (max-height: 670px) 
+{
+  #tirinha-portfolio{
+    height: 150px;
+  }
+}
+
+.titulo{
+    font-size: 50px;
+    font-weight: 200;
+  text-align: center;
+  margin-top: -150px;
+  margin-bottom: 75px;
+  color: #07063f !important;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji" !important;
+}
+
+@media (max-height: 670px) 
+{
+    .titulo{
+        font-size: 40px;
+        margin-top: -130px;
+    }
+}

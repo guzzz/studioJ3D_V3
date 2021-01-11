@@ -1,0 +1,308 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-01-04 19:24-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: base/templates/lateral_menu.html:13 base/templates/mobile_menu.html:44
+msgid "portfólio"
+msgstr "portfolio"
+
+#: base/templates/lateral_menu.html:16 base/templates/mobile_menu.html:47
+msgid "orçamento"
+msgstr "budget"
+
+#: base/templates/lateral_menu.html:19 base/templates/mobile_menu.html:50
+msgid "sobre"
+msgstr "about"
+
+#: base/templates/lateral_menu.html:22 base/templates/mobile_menu.html:53
+msgid "contato"
+msgstr "contact"
+
+#: otherPages/templates/aboutPage.html:58
+msgid "OLÁ!"
+msgstr "HELLO!"
+
+#: otherPages/templates/aboutPage.html:62
+msgid ""
+"Fundado em Niterói, RJ, desde 2018, o STUDIO J3D é um estúdio especializado "
+"em visualização arquitetônica."
+msgstr ""
+"Based in Niterói, Rio de Janeiro, since 2018, STUDIO J3D is a studio "
+"specialized in architecture visualization."
+
+#: otherPages/templates/aboutPage.html:66
+msgid ""
+"Auxiliamos profissionais da área da arquitetura em suas apresentações de "
+"projeto. Através das imagens 3D, o seu cliente se apaixona ainda mais pelos "
+"ambientes projetados, de forma clara e sem dúvidas de como vai ficar."
+msgstr ""
+"We help architecture professionals in their projects presentations.  With "
+"realistics images your client will be even more delighted with your project, "
+"clearly and without doubts."
+
+#: otherPages/templates/aboutPage.html:70
+msgid ""
+"IMAGENS REALISTAS SÃO A MELHOR FORMA DE APRESENTAR O FUTURO PARA SEUS "
+"CLIENTES!"
+msgstr ""
+"REALISTICS IMAGES ARE THE BEST WAY TO PRESENT THE FUTURE TO YOUR CLIENTS!"
+
+#: otherPages/templates/aboutPage.html:75
+msgid "COMO FUNCIONA?"
+msgstr "HOW IT WORKS?"
+
+#: otherPages/templates/aboutPage.html:79
+msgid "Nós oferecemos três tipos de serviço:"
+msgstr "We offers tree differents types of service:"
+
+#: otherPages/templates/aboutPage.html:83
+msgid "modelagem 3D + imagens renderizadas."
+msgstr "3D modeling + rendered images."
+
+#: otherPages/templates/aboutPage.html:87
+msgid "somente as imagens renderizadas feitas a partir do seu arquivo 3D."
+msgstr "only rendered images made from your 3D archive."
+
+#: otherPages/templates/aboutPage.html:91
+msgid "complementação da modelagem 3D + imagens renderizadas."
+msgstr "complementation of your 3D model + rendered images."
+
+#: otherPages/templates/aboutPage.html:95
+msgid ""
+"Durante o serviço, o cliente sempre recebe imagens prévias para a escolha "
+"das vistas e conferência da modelagem, iluminação e materiais. "
+msgstr ""
+"The client always receives preliminary images for choosing the views and "
+"checking the 3D modeling, lighting and materials."
+
+#: otherPages/templates/aboutPage.html:95
+msgid "Tudo pra ficar do jeitinho que projetou!"
+msgstr "This way, everything is going to be in accordance with the project!"
+
+#: otherPages/templates/budgetPage.html:58
+msgid "QUER SOLICITAR UM ORÇAMENTO?"
+msgstr "WANT TO REQUEST A QUOTE?"
+
+#: otherPages/templates/budgetPage.html:62
+msgid "Entre em contato conosco clicando"
+msgstr "Contact us by clicking"
+
+#: otherPages/templates/budgetPage.html:62
+msgid "aqui"
+msgstr "here"
+
+#: otherPages/templates/budgetPage.html:62
+msgid "ou mande um email para email@email.com. "
+msgstr "or send an email to email@email.com."
+
+#: otherPages/templates/budgetPage.html:66
+msgid ""
+"Lembre-se de nos dizer como é o seu projeto, se vai querer a modelagem 3D, "
+"ou somente as imagens renderizadas (com a quantidade!)."
+msgstr ""
+"Remember to tell us how your project is, if you woud like the 3D modeling of "
+"the projetc, or just the rendering images. Don’t forget to tell us how many "
+"imagens would you like!"
+
+#: otherPages/templates/budgetPage.html:70
+msgid ""
+"Não se esqueça de também nos seguir nas nossas redes sociais: facebook e "
+"instagram. Qualquer dúvida estaremos por lá para atendê-lo!"
+msgstr ""
+"Please also follow us on our social medias: facebook and instagram. If you "
+"have any doubts or questions we will be pleased to answer them there!"
+
+#: otherPages/templates/contactPage.html:62
+msgid "FALE CONOSCO"
+msgstr "CONTACT US"
+
+#: otherPages/templates/contactPage.html:66
+msgid "Tel"
+msgstr "Cel"
+
+#: otherPages/templates/contactPage.html:70
+msgid ""
+"Entre em contato se tiver alguma dúvida, comentário ou para solicitar um "
+"orçamento."
+msgstr ""
+"Please contact us if you have any questions, comments or to request a quote."
+
+#: otherPages/templates/contactPage.html:95
+msgid "ENVIAR"
+msgstr "SEND"
+
+#: projectsPage/models.py:13
+msgid "Ambiente"
+msgstr ""
+
+#: projectsPage/models.py:15
+msgid "Foto"
+msgstr ""
+
+#: projectsPage/models.py:18
+msgid "Foto Pequena"
+msgstr ""
+
+#: projectsPage/models.py:24
+msgid "Posição"
+msgstr ""
+
+#: projectsPage/models.py:28
+msgid "Descrição"
+msgstr ""
+
+#: projectsPage/models.py:31
+msgid "Largura"
+msgstr ""
+
+#: projectsPage/models.py:35
+msgid "Altura"
+msgstr ""
+
+#: projectsPage/models.py:38
+msgid "Criado em"
+msgstr ""
+
+#: projectsPage/models.py:61
+msgid "um Projeto"
+msgstr ""
+
+#: projectsPage/models.py:62
+msgid "Imagens dos Projetos"
+msgstr ""
+
+#: projectsPage/templates/filters.html:11
+#: projectsPage/templates/mobile-filters.html:39
+msgid "Salas"
+msgstr "Living Rooms"
+
+#: projectsPage/templates/filters.html:19
+#: projectsPage/templates/mobile-filters.html:42
+msgid "Quartos"
+msgstr "Bedrooms"
+
+#: projectsPage/templates/filters.html:27
+#: projectsPage/templates/mobile-filters.html:45
+msgid "Escritórios"
+msgstr "Home Offices"
+
+#: projectsPage/templates/filters.html:36
+#: projectsPage/templates/mobile-filters.html:48
+msgid "Banheiros"
+msgstr "Bathrooms"
+
+#: projectsPage/templates/filters.html:44
+#: projectsPage/templates/mobile-filters.html:51
+msgid "Cozinhas"
+msgstr "Kitchens"
+
+#: projectsPage/templates/filters.html:53
+#: projectsPage/templates/mobile-filters.html:54
+msgid "Externas"
+msgstr "Outdoors"
+
+#: projectsPage/templates/filters.html:62
+#: projectsPage/templates/mobile-filters.html:57
+msgid "Fachadas"
+msgstr "Facades"
+
+#: projectsPage/templates/filters.html:71
+#: projectsPage/templates/mobile-filters.html:60
+msgid "Restaurantes"
+msgstr "Restaurants"
+
+#: projectsPage/templates/filters.html:80
+#: projectsPage/templates/mobile-filters.html:63
+msgid "Corporativo / Comercial"
+msgstr "Corporate / Commercial"
+
+#: projectsPage/templates/filters.html:89
+#: projectsPage/templates/mobile-filters.html:66
+msgid "TCC"
+msgstr "Capstone Projects"
+
+#: projectsPage/templates/filters.html:97
+#: projectsPage/templates/mobile-filters.html:69
+#: projectsPage/templates/portfolio-header.html:37
+msgid "360º"
+msgstr ""
+
+#: projectsPage/templates/portfolio-header.html:17
+msgid "SALAS"
+msgstr "LIVING ROOMS"
+
+#: projectsPage/templates/portfolio-header.html:19
+msgid "QUARTOS"
+msgstr "BEDROOMS"
+
+#: projectsPage/templates/portfolio-header.html:21
+msgid "ESCRITÓRIOS"
+msgstr "HOME OFFICES"
+
+#: projectsPage/templates/portfolio-header.html:23
+msgid "BANHEIROS"
+msgstr "BATHROOMS"
+
+#: projectsPage/templates/portfolio-header.html:25
+msgid "COZINHAS"
+msgstr "KITCHENS"
+
+#: projectsPage/templates/portfolio-header.html:27
+msgid "EXTERNAS"
+msgstr "OUTDOORS"
+
+#: projectsPage/templates/portfolio-header.html:29
+msgid "FACHADAS"
+msgstr "FACADES"
+
+#: projectsPage/templates/portfolio-header.html:31
+msgid "RESTAURANTES"
+msgstr "RESTAURANTS"
+
+#: projectsPage/templates/portfolio-header.html:33
+msgid "CORPORATIVO / COMERCIAL"
+msgstr "CORPORATE / COMMERCIAL"
+
+#: projectsPage/templates/portfolio-header.html:35
+msgid "TCC's"
+msgstr "CAPSTONE PROJECTS"
+
+#: projectsPage/templates/projectsPage.html:84
+msgid "No momento não há nenhuma imagem nessa categoria!"
+msgstr "Currently there is no picture in this category!"
+
+#: sendPromotionMail/models.py:24
+msgid "E-mail"
+msgstr ""
+
+#: sendPromotionMail/models.py:27
+msgid "Tentou enviar?"
+msgstr ""
+
+#: sendPromotionMail/models.py:28
+msgid "Enviado?"
+msgstr ""
+
+#: sendPromotionMail/models.py:33
+msgid "uma tentiva de envio de e-mail"
+msgstr ""
+
+#: sendPromotionMail/models.py:34
+msgid "Enviar e-mails de divulgação"
+msgstr ""

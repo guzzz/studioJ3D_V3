@@ -1,0 +1,53 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+	<title>STUDIO J3D - 360º</title>
+  {% include "google-analytics.html" %}
+	
+	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">	
+  <link rel="stylesheet" href="{% static 'css/default-skin/default-skin.css' %}">
+
+  <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+  <script src="{% static 'js/popper.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  
+  <link rel="stylesheet" href="{% static 'css/360-page.css' %}">
+  <link rel="stylesheet" href="{% static 'css/mdb.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+  
+  <script type="text/javascript" src="{% static 'js/font-awesome.min.js' %}"></script> 
+  <script type="text/javascript" src="{% static 'js/aframe.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/go-back.js' %}"></script>
+</head>
+<body>
+
+  <div class="navbar">
+    <a onclick="goBack()"><i class="fa fa-arrow-circle-left icon-css"></i></a>
+  </div>
+  <div class="main">
+    <a-scene loading-screen="dotsColor: #06063f; backgroundColor: #e1e1e1"
+      vr-mode-ui="enterVRButton: #myEnterVRButton; enterARButton: #myEnterARButton">
+      <a-assets>
+        <img id="my-image" crossorigin="anonymous" src="{{ image }}">
+      </a-assets>
+      <a-sky src="#my-image" color="#FFF"></a-sky>
+    </a-scene>
+    <button id="myEnterVRButton" class="vr-hidden">
+      <i class="fas fa-vr-cardboard"></i>
+    </button>
+    <button id="myEnterARButton" class="ar-buttom">
+      <i class="fas fa-expand"></i>
+    </button>
+  </div> 
+  <div class="bg">
+    <div class="centered">{{ description }}</div>
+  </div>
+
+<script src="{% static 'js/mdb.min.js' %}"></script>
+
+</body>
+</html>

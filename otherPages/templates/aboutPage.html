@@ -1,0 +1,116 @@
+{% load static %}
+
+{% load static i18n %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>STUDIO J3D - Sobre</title>
+  {% include "google-analytics.html" %}
+	
+	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">	
+
+  <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+	<script src="{% static 'js/popper.min.js' %}"></script>
+	<script src="{% static 'js/bootstrap.min.js' %}"></script>
+	
+  <link rel="stylesheet" href="{% static 'css/base.css' %}">
+  <link rel="stylesheet" href="{% static 'css/menu-mobile.css' %}">
+  <link rel="stylesheet" href="{% static 'css/menu-lateral.css' %}">
+  <link rel="stylesheet" href="{% static 'css/aboutPage.css' %}">
+  
+	<link rel="stylesheet" href="{% static 'css/default-skin/default-skin.css' %}">
+  <link rel="stylesheet" href="{% static 'css/mdb.min.css' %}">
+
+  <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+  <script type="text/javascript" src="{% static 'js/font-awesome.min.js' %}"></script>
+</head>
+<body>
+
+<div class="wrapper">
+  {% if not request.user_agent.is_mobile %}
+    {% include "lateral_menu.html" %}
+  {% else %}
+    {% include "mobile_menu.html" %}
+  {% endif %}
+
+  <div id="desktop-header">
+    <div class="header header-ml">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="xs-12">
+            <img id="tirinha-portfolio" src="{% static 'img/SOBRE_T_2.jpg' %}">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="exception"></div>
+  <div class="info">
+
+  <div id="projects-container" class="{% if request.user_agent.is_mobile %}container-fluid no-ml {% else %}margin-left-20 container-fluid{% endif %}">
+
+    <div class="row">
+        <div class="col-12 col-lg-8">
+          <p class="{% if request.user_agent.is_mobile %} about-titulo-mb{% else %}about-titulo{% endif %}">
+            {% trans "OLÁ!" %}
+          </p>
+          
+          <p class="{% if request.user_agent.is_mobile %} about-paragrafo-mb{% else %}about-paragrafo{% endif %}">
+            {% trans "Fundado em Niterói, RJ, desde 2018, o STUDIO J3D é um estúdio especializado em visualização arquitetônica." %}
+          </p>
+
+          <p class="{% if request.user_agent.is_mobile %} about-paragrafo-mb{% else %}about-paragrafo{% endif %}">
+            {% trans "Auxiliamos profissionais da área da arquitetura em suas apresentações de projeto. Através das imagens 3D, o seu cliente se apaixona ainda mais pelos ambientes projetados, de forma clara e sem dúvidas de como vai ficar." %}
+          </p>
+
+          <p class="{% if request.user_agent.is_mobile %} about-paragrafo-mb{% else %}about-paragrafo{% endif %}">
+            <b>{% trans "IMAGENS REALISTAS SÃO A MELHOR FORMA DE APRESENTAR O FUTURO PARA SEUS CLIENTES!" %}</b>
+          </p>
+          <br>
+
+          <p class="{% if request.user_agent.is_mobile %} about-titulo-mb{% else %}about-titulo{% endif %}">
+            {% trans "COMO FUNCIONA?" %}
+          </p> 
+
+          <p class="{% if request.user_agent.is_mobile %} about-paragrafo-mb{% else %}about-paragrafo{% endif %}">
+            {% trans "Nós oferecemos três tipos de serviço:" %}
+          </p>
+
+          <p class="{% if request.user_agent.is_mobile %} about-paragrafo-mb{% else %}about-paragrafo{% endif %}">
+            <b>1) {% trans "modelagem 3D + imagens renderizadas." %}</b>
+          </p>
+
+          <p class="{% if request.user_agent.is_mobile %} about-paragrafo-mb{% else %}about-paragrafo{% endif %}">
+            <b>2) {% trans "somente as imagens renderizadas feitas a partir do seu arquivo 3D." %}</b>
+          </p>
+
+          <p class="{% if request.user_agent.is_mobile %} about-paragrafo-mb{% else %}about-paragrafo{% endif %}">
+            <b>3) {% trans "complementação da modelagem 3D + imagens renderizadas." %}</b>
+          </p>
+
+          <p class="{% if request.user_agent.is_mobile %} about-paragrafo-mb{% else %}about-paragrafo{% endif %}">
+            {% trans "Durante o serviço, o cliente sempre recebe imagens prévias para a escolha das vistas e conferência da modelagem, iluminação e materiais. " %}<b>{% trans "Tudo pra ficar do jeitinho que projetou!" %}</b>
+          </p>
+        </div>
+
+        <div class="col-12 col-lg-4 boximgprod">
+          <img class="about-img" src="{% static 'img/SOBRE.png' %}">
+        </div>
+        
+      </div>      
+    </div>
+  </div>
+
+	</div>
+      </div>
+    </div>
+</div>
+
+<script src="{% static 'js/menus.js' %}"></script>
+<script src="{% static 'js/mdb.min.js' %}"></script>
+
+</body>
+</html>

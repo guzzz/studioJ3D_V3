@@ -1,0 +1,99 @@
+{% load static %}
+
+{% load static i18n %}
+
+<div id="ml-or-not" class="main_content no-ml">
+    
+  <div id="menu-mobile">
+    <nav class="navbar navbar-light lighten-4 mb-4 hamburguer-bar-color">
+      <img id="logo-deitado" src="{% static 'img/studio_nome.png' %}">
+
+      <form id="form">{% csrf_token %}
+        <div class="container-fluid">
+          <div class="row" >
+            {% get_current_language as LANGUAGE_CODE %}
+            <div class="col-3">
+              <a class="language-options-mb" onclick="post(&quot;{% url 'set_language' %}&quot;, {language: 'en'});">
+                {% if LANGUAGE_CODE == 'en' %}<b>EN</b>{% else %}EN{% endif %}
+              </a>
+            </div>
+            <div class="col-3">
+              <a class="language-options-mb" onclick="post(&quot;{% url 'set_language' %}&quot;, {language: 'br'});">
+                {% if LANGUAGE_CODE == 'pt' %}<b>BR</b>{% else %}BR{% endif %}
+              </a>
+            </div>
+            <div class="col-3">
+              <a class="language-options-mb" onclick="post(&quot;{% url 'set_language' %}&quot;, {language: 'es'});">
+                {% if LANGUAGE_CODE == 'es' %}<b>ES</b>{% else %}ES{% endif %}
+              </a>
+            </div>
+          </div>
+        </div>
+      </form>
+
+      <button class="hamburguer-button-height navbar-toggler first-button" type="button" data-toggle="collapse" data-target="#navbarSupportedContent20"
+        aria-controls="navbarSupportedContent20" aria-expanded="false" aria-label="Toggle navigation">
+        <div class="animated-icon1"><span></span><span></span><span></span></div>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent20">
+        <ul class="navbar-nav mr-auto mobile-options-font-size">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'home' %}" id="home">home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'projects' %}" id="projects">{% trans "portfólio" %}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'budget' %}" id="budget">{% trans "orçamento" %}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'about' %}" id="about">{% trans "sobre" %}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'contact' %}" id="contact">{% trans "contato" %}</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+<script type="text/javascript">
+function post(path, params, method='post') {
+  const form = document.getElementById('form');
+  form.method = method;
+  form.action = path;
+
+  for (const key in params) {
+    if (params.hasOwnProperty(key)) {
+      const hiddenField = document.createElement('input');
+      hiddenField.type = 'hidden';
+      hiddenField.name = key;
+      hiddenField.value = params[key];
+
+      form.appendChild(hiddenField);
+    }
+  }
+
+  document.body.appendChild(form);
+  form.submit();
+}
+</script>
+
+<script>
+  if( window.location.pathname.indexOf("contact") != -1 ){
+    $("#contact").parent().addClass("active");
+    $("#contact").append('<span class="sr-only">(current)</span>');
+  }else if( window.location.pathname.indexOf("projects") != -1 ){
+    $("#projects").parent().addClass("active");
+    $("#projects").append('<span class="sr-only">(current)</span>');
+  }else if( window.location.pathname.indexOf("budget") != -1 ){
+    $("#budget").parent().addClass("active");
+    $("#budget").append('<span class="sr-only">(current)</span>');
+  }else if( window.location.pathname.indexOf("about") != -1 ) {
+    $("#about").parent().addClass("active");
+    $("#about").append('<span class="sr-only">(current)</span>');
+  }else{
+    $("#home").parent().addClass("active");
+    $("#home").append('<span class="sr-only">(current)</span>');
+  }
+</script>

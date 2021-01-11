@@ -1,0 +1,106 @@
+{% load static %}
+
+{% load static i18n %}
+
+<div class="filters-height">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-1" style="width: 4.16%;
+    flex: 0 0 4.16%;max-width: 4.16%;"></div>
+			<div class="col-1">
+        <a data-container="body" data-toggle="popover" data-trigger="hover" data-placement="top" data-content='{% trans "Salas" %}' href="/projects?space=living room">
+          <img class="filters-imgs" height="60px" style="margin-left: -10px" src="{% static 'img/1_salas.png' %}">
+          {% if selected_filter == 'living room' %}
+          <img class="filter-selected-especial" height="15px" src="{% static 'img/bolinha.png' %}">
+          {% endif %}
+        </a>
+			</div>
+			<div class="col-1">
+        <a data-container="body" data-toggle="popover" data-trigger="hover" data-placement="top" data-content='{% trans "Quartos" %}' href="/projects?space=bedroom">
+          <img class="filters-imgs" height="60px" src="{% static 'img/2_quartos.png' %}">
+          {% if selected_filter == 'bedroom' %}
+          <img class="filter-selected" height="15px" src="{% static 'img/bolinha.png' %}">
+          {% endif %}
+        </a>
+			</div>
+			<div class="col-1">
+        <a data-container="body" data-toggle="popover" data-trigger="hover" data-placement="top" data-content='{% trans "Escritórios" %}' href="/projects?space=home office">
+          <img class="filters-imgs" height="60px" src="{% static 'img/3_escritórios.png' %}">
+          {% if selected_filter == 'home office' %}
+          <img class="filter-selected" height="15px" src="{% static 'img/bolinha.png' %}">
+          {% endif %}
+        </a>
+				
+			</div>
+			<div class="col-1">
+        <a data-container="body" data-toggle="popover" data-trigger="hover" data-placement="top" data-content='{% trans "Banheiros" %}' href="/projects?space=bathroom">
+          <img class="filters-imgs" height="60px" src="{% static 'img/4_banheiros.png' %}">
+          {% if selected_filter == 'bathroom' %}
+          <img class="filter-selected" height="15px" src="{% static 'img/bolinha.png' %}">
+          {% endif %}
+        </a>
+			</div>
+			<div class="col-1">
+        <a data-container="body" data-toggle="popover" data-trigger="hover" data-placement="top" data-content='{% trans "Cozinhas" %}' href="/projects?space=kitchen">
+          <img class="filters-imgs" height="60px" src="{% static 'img/5_cozinhas.png' %}">
+          {% if selected_filter == 'kitchen' %}
+          <img class="filter-selected" height="15px"src="{% static 'img/bolinha.png' %}">
+          {% endif %}
+        </a>
+				
+			</div>
+			<div class="col-1">
+        <a data-container="body" data-toggle="popover" data-trigger="hover" data-placement="top" data-content='{% trans "Externas" %}' href="/projects?space=outside">
+          <img class="filters-imgs" height="60px" src="{% static 'img/6_externas.png' %}">
+          {% if selected_filter == 'outside' %}
+          <img class="filter-selected" height="15px" src="{% static 'img/bolinha.png' %}">
+          {% endif %}
+        </a>
+				
+			</div>
+			<div class="col-1">
+        <a data-container="body" data-toggle="popover" data-trigger="hover" data-placement="top" data-content='{% trans "Fachadas" %}' href="/projects?space=frontage">
+          <img class="filters-imgs" height="60px" src="{% static 'img/7_fachadas.png' %}">
+          {% if selected_filter == 'frontage' %}
+          <img class="filter-selected" height="15px" src="{% static 'img/bolinha.png' %}">
+          {% endif %}
+        </a>
+				
+			</div>
+			<div class="col-1">
+        <a data-container="body" data-toggle="popover" data-trigger="hover" data-placement="top" data-content='{% trans "Restaurantes" %}' href="/projects?space=restaurant">
+          <img class="filters-imgs" height="60px" src="{% static 'img/8_restaurantes.png' %}">
+          {% if selected_filter == 'restaurant' %}
+          <img class="filter-selected" height="15px" src="{% static 'img/bolinha.png' %}">
+          {% endif %}
+        </a>
+				
+			</div>
+      <div class="col-1">
+        <a data-container="body" data-toggle="popover" data-trigger="hover" data-placement="top" data-content='{% trans "Corporativo / Comercial" %}' href="/projects?space=corporate">
+          <img class="filters-imgs" height="60px" src="{% static 'img/9_corporativo.png' %}">
+          {% if selected_filter == 'corporate' %}
+          <img class="filter-selected" height="15px" src="{% static 'img/bolinha.png' %}">
+          {% endif %}
+        </a>
+        
+      </div>
+			<div class="col-1">
+        <a data-container="body" data-toggle="popover" data-trigger="hover" data-placement="top" data-content='{% trans "TCC" %}' href="/projects?space=tcc">
+          <img class="filters-imgs" height="60px" src="{% static 'img/10_tcc.png' %}">
+          {% if selected_filter == 'tcc' %}
+          <img class="filter-selected" height="15px" src="{% static 'img/bolinha.png' %}">
+          {% endif %}
+        </a>
+			</div>
+			<div class="col-1">
+        <a data-container="body" data-toggle="popover" data-trigger="hover" data-placement="top" data-content='{% trans "360º" %}' href="/projects?space=360">
+          <img class="filters-imgs" height="60px" src="{% static 'img/11_360.png' %}">
+          {% if selected_filter == '360' %}
+          <img class="filter-selected" height="15px" src="{% static 'img/bolinha.png' %}">
+          {% endif %}
+        </a>
+      </div>
+		</div>
+	</div>
+</div>

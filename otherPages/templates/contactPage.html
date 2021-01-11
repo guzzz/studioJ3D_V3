@@ -1,0 +1,122 @@
+{% load static %}
+
+{% load static i18n %}
+
+{% if request.user_agent.is_mobile %}
+{% include "mobile-contact-form.html" %}
+{% endif %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>STUDIO J3D - Contato</title>
+  {% include "google-analytics.html" %}
+	
+	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">	
+
+  <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+	<script src="{% static 'js/popper.min.js' %}"></script>
+	<script src="{% static 'js/bootstrap.min.js' %}"></script>
+	
+  <link rel="stylesheet" href="{% static 'css/base.css' %}">
+  <link rel="stylesheet" href="{% static 'css/menu-mobile.css' %}">
+  <link rel="stylesheet" href="{% static 'css/menu-lateral.css' %}">
+  <link rel="stylesheet" href="{% static 'css/contactPage.css' %}">
+  
+	<link rel="stylesheet" href="{% static 'css/default-skin/default-skin.css' %}">
+  <link rel="stylesheet" href="{% static 'css/mdb.min.css' %}">
+
+  <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+  <script type="text/javascript" src="{% static 'js/font-awesome.min.js' %}"></script>
+</head>
+<body>
+
+<div class="wrapper">
+  {% if not request.user_agent.is_mobile %}
+    {% include "lateral_menu.html" %}
+  {% else %}
+    {% include "mobile_menu.html" %}
+  {% endif %}
+
+  <div id="desktop-header">
+    <div class="header header-ml">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="xs-12">
+            <img id="tirinha-portfolio" src="{% static 'img/CONTATO_T_2.jpg' %}">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="exception"></div>
+  <div class="info">
+    <div id="projects-container" class="{% if request.user_agent.is_mobile %}container-fluid no-ml {% else %}margin-left-20 container-fluid{% endif %}">
+
+      <div class="row">
+        <div class="col-12 col-lg-8">
+
+          <p class="{% if request.user_agent.is_mobile %} about-titulo-mb{% else %}about-titulo{% endif %}">
+            {% trans "FALE CONOSCO" %}
+          </p>
+
+          <p class="{% if request.user_agent.is_mobile %} about-paragrafo-mb-wt{% else %}about-paragrafo-wt{% endif %}">
+            {% trans "Tel" %}: +00 (DDD) ***** ****<br>Email: email@email.com
+          </p>
+          
+          <p class="{% if request.user_agent.is_mobile %} about-paragrafo-mb{% else %}about-paragrafo{% endif %}">
+            {% trans "Entre em contato se tiver alguma dúvida, comentário ou para solicitar um orçamento." %}
+          </p>
+
+          {% if messages %}
+            {% for message in messages %}
+                <div class="form-response">{{ message }}</div>
+            {% endfor %}
+          {% else %}
+            {% if form %}
+            <form method="POST" id="form-contact" class="">
+              {% csrf_token %}
+              <div class="form-row mb-0">
+                <div class="col">
+                  {{ form.from_email }}
+                  {{ form.from_email.errors }}
+                </div>
+              </div>
+              <div class="form-row mb-0">
+                <div class="col">
+                  {{ form.email_message }}
+                  {{ form.email_message.errors }}
+                </div>
+              </div>
+              <div class="{% if request.user_agent.is_mobile %}form-row mb-0{% else %}form-row mb-0 botao-alinhado-esq {% endif %}">
+                <div class="col">
+                  <button id="sendButton" class="{% if request.user_agent.is_mobile %}btn btn-info send-button-width{% else %}btn btn-info{% endif %}" type="submit">{% trans "ENVIAR" %}</button>
+                </div>
+              </div>
+              <div class="form-row mb-0">
+                <div class="col">
+                  {{ form.non_field_errors }}
+                </div></div>
+            </form>
+            {% endif %}
+          {% endif %}
+        </div>
+        <div class="col-12 col-lg-4 boximgprod">
+          <img class="about-img" src="{% static 'img/CONTATO.png' %}">
+        </div>
+      </div>
+    </div>
+  </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="{% static 'js/contactPage.js' %}"></script>
+<script src="{% static 'js/menus.js' %}"></script>
+<script src="{% static 'js/mdb.min.js' %}"></script>
+
+</body>
+</html>

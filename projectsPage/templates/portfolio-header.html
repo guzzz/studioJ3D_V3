@@ -1,0 +1,40 @@
+{% load static %}
+
+{% load static i18n %}
+
+<div id="desktop-header">
+  <div class="header header-ml">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="xs-12">
+          <img id="tirinha-portfolio" src="{% static 'img/PORTFOLIO_T_2.jpg' %}">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="header titulo">
+    {% if selected_filter == 'living room' %}
+    <div>{% trans "SALAS" %}</div>
+    {% elif selected_filter == 'bedroom' %}
+    <div>{% trans "QUARTOS" %}</div>
+    {% elif selected_filter == 'home office' %}
+    <div>{% trans "ESCRITÓRIOS" %}</div>
+    {% elif selected_filter == 'bathroom' %}
+    <div>{% trans "BANHEIROS" %}</div>
+    {% elif selected_filter == 'kitchen' %}
+    <div>{% trans "COZINHAS" %}</div>
+    {% elif selected_filter == 'outside' %}
+    <div>{% trans "EXTERNAS" %}</div>
+    {% elif selected_filter == 'frontage' %}
+    <div>{% trans "FACHADAS" %}</div>
+    {% elif selected_filter == 'restaurant' %}
+    <div>{% trans "RESTAURANTES" %}</div>
+    {% elif selected_filter == 'corporate' %}
+    <div>{% trans "CORPORATIVO / COMERCIAL" %}</div>
+    {% elif selected_filter == 'tcc' %}
+    <div>{% trans "TCC's" %}</div>
+    {% elif selected_filter == '360' %}
+    <div>{% trans "360º" %}</div>
+    {% endif %}
+  </div>
+</div>

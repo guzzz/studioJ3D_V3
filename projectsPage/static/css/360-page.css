@@ -1,0 +1,111 @@
+a-scene {
+  position: absolute !important;
+  top: 6px;
+  left: 0px;
+}
+
+.vr-hidden {
+  display: none;
+}
+
+.ar-buttom {
+  position: absolute; 
+  right: 15px; 
+  bottom: 20px; 
+  min-width: 50px; 
+  min-height: 50px; 
+  font-size: 22px;
+  background: bottom;
+  color: white;
+  z-index: 1;
+  border: navajowhite;
+}
+
+@media(min-width: 990px){
+  .ar-buttom {
+    position: absolute; 
+    right: 15px; 
+    bottom: 5px; 
+    min-width: 50px; 
+    min-height: 50px; 
+    font-size: 22px;
+    background: bottom;
+    color: white;
+    z-index: 1;
+    border: navajowhite;
+  }
+}
+
+.ar-buttom:focus {
+  outline: none !important;
+}
+
+.bg {
+  position: fixed;
+  bottom: 0;
+  left: 0px;
+  height: 90px;
+  width: 100%;
+  background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3));
+  padding: 0 10px 0 10px; 
+}
+
+@media(min-width: 990px){
+  .bg {
+    position: fixed;
+    bottom: 0;
+    left: 0px;
+    height: 60px;
+    width: 100%;
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3));
+    padding: 0 10px 0 10px; 
+  }
+}
+
+.centered {
+  visibility: visible;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 19px;
+  font-weight: bold;
+  color: white;
+}
+
+  .navbar {
+  overflow: hidden;
+  box-shadow: none !important;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+  z-index: 1;
+}
+
+/* Links inside the navbar */
+.navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change background on mouse-over */
+.navbar a:hover {
+  background: #ddd;
+  color: black;
+}
+
+/* Main content */
+.main {
+  margin-top: 30px; /* Add a top margin to avoid content overlay */
+}
+
+.icon-css{
+  font-size:36px;
+  color: white;
+}
+
+

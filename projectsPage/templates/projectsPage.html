@@ -1,0 +1,219 @@
+{% load static %}
+
+{% load static i18n %}
+
+{% if request.user_agent.is_mobile %}
+{% include "grid-mobile.html" %}
+{% else %}
+{% include "grid-non-mobile.html" %}
+{% endif %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>STUDIO J3D - Portfólio</title>
+  {% include "google-analytics.html" %}
+
+  <link rel="stylesheet" href="{% static 'css/base.css' %}">
+  <link rel="stylesheet" href="{% static 'css/menu-mobile.css' %}">
+  <link rel="stylesheet" href="{% static 'css/menu-lateral.css' %}">
+	
+	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">	
+  <link rel="stylesheet" href="{% static 'css/bootstrap-select.min.css' %}"> 
+  <link rel="stylesheet" href="{% static 'css/photoswipe.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/default-skin/default-skin.css' %}">
+
+  <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+  <script src="{% static 'js/popper.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap-select.min.js' %}"></script>
+
+  <script type="text/javascript" src="{% static 'js/masonry.pkgd.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/imagesloaded.pkgd.min.js' %}"></script>
+	
+  
+  <script src="{% static 'js/photoswipe.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/photoswipe-ui-default.min.js' %}"></script>
+
+  <link rel="stylesheet" href="{% static 'css/projects-page.css' %}">
+  <link rel="stylesheet" href="{% static 'css/mdb.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+  <script type="text/javascript" src="{% static 'js/font-awesome.min.js' %}"></script>  
+</head>
+<body>
+
+<div class="wrapper">
+  {% if not request.user_agent.is_mobile %}
+    {% include "lateral_menu.html" %}
+  {% else %}
+    {% include "mobile_menu.html" %}
+  {% endif %}
+
+  {% if not request.user_agent.is_mobile %}
+    {% include "portfolio-header.html" %}
+  {% endif %}
+
+  <div id="exception"></div>
+  <div class="info">
+
+
+  {% if not request.user_agent.is_mobile %}
+    {% include "filters.html" %}
+  {% else %}
+    {% include "mobile-filters.html" %}
+  {% endif %}
+  
+  <div id="projects-container" class="{% if request.user_agent.is_mobile %}container-fluid no-ml {% else %}margin-left-20 container-fluid{% endif %}">
+  	<div class="row">
+  		<div class="col-12">
+        {% if img_list %}
+  			<div class="grid">
+  					{% for img in img_list %}
+              <div class="grid-sizer"></div>
+              <div class="grid-item"
+                onmouseenter="enterHover('{{ img.position }}')" 
+                onmouseleave="leaveHover('{{ img.position }}')" 
+                onclick="openGalery( '{{ img.position }}', '{{ img.space }}', '{{ img.id }}' )">
+                  <div id="{{ img.position }}" class="centered cell">{{ img.description }}</div>
+                <img width="100%" src="{{ img.small_photo.url }}" class="mb-mob" />
+              </div>
+  					{% endfor %}
+  			 </div>
+         {% else %}
+         <div class="form-response">{% trans "No momento não há nenhuma imagem nessa categoria!" %}</div>
+         {% endif %}
+  		  </div>
+      </div>
+    </div>
+  </div>
+
+	<!-- PhotoSwipe -->
+	<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+	    <div class="pswp__bg"></div>
+	    <div class="pswp__scroll-wrap">
+	        <!-- Container that holds slides. PhotoSwipe keeps only 3 slides in DOM to save memory. -->
+	        <div class="pswp__container">
+	            <!-- don't modify these 3 pswp__item elements, data is added later on -->
+	            <div class="pswp__item"></div>
+	            <div class="pswp__item"></div>
+	            <div class="pswp__item"></div>
+	        </div>
+	        <div class="pswp__ui pswp__ui--hidden">
+	            <div class="pswp__top-bar">
+	                <div class="pswp__counter"></div>
+	                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+	                <!-- <button class="pswp__button pswp__button--share" title="Share"></button> -->
+	                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+	                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+	                
+	                <div class="pswp__preloader">
+	                    <div class="pswp__preloader__icn">
+							<div class="pswp__preloader__cut">
+								<div class="pswp__preloader__donut"></div>
+							</div>
+	                    </div>
+	                </div>
+	            </div>
+	            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+	                <div class="pswp__share-tooltip"></div> 
+	            </div>
+
+	            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+	            </button>
+	            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+	            </button>
+
+	            <div class="pswp__caption">
+	                <div class="pswp__caption__center"></div>
+	            </div>
+          	</div>
+        </div>
+
+	</div>
+      </div>
+    </div>
+</div>
+
+<script src="{% static 'js/custom-photoswipe.js' %}"></script>
+<script src="{% static 'js/hover-images.js' %}"></script>
+<script src="{% static 'js/menus.js' %}"></script>
+<script src="{% static 'js/projects-page.js' %}"></script>
+<script src="{% static 'js/mdb.min.js' %}"></script>
+
+<script type="text/javascript">
+
+  function openGalery( first_position, space, id ){
+
+    if(space == '360'){
+
+      location.href='/360/'+id+'/' 
+
+    }else{
+      var pswpElement = document.querySelectorAll('.pswp')[0];
+      var all_images = {{javascript_list|safe}};
+      var items = []
+      var fill_first = true
+      var position_to_compare = null
+
+        // GET THE FIRST
+      for (i = all_images.length-1; i >= 0 ; i--) {
+        if(all_images[i].position == first_position && fill_first){
+          items.push(
+            {
+              src: all_images[i].photo_url,
+              w: all_images[i].width,
+              h: all_images[i].height,
+              title: all_images[i].description,
+             }
+          );
+          fill_first = false
+          position_to_compare = all_images[i].position
+        }
+      }
+
+      // GETS ALL IMGS WITH HIGHESTS POSITIONS
+      for(i = 0; i < all_images.length; i++){
+        if(all_images[i].position < position_to_compare){
+          items.push(
+            {
+              src: all_images[i].photo_url,
+              w: all_images[i].width,
+              h: all_images[i].height,
+              title: all_images[i].description
+            }
+          );
+          position_to_compare = all_images[i].position
+        }
+      }
+
+      // GETS ALL REMAINING IMGS
+      if(all_images.length > items.length ){
+        for(i = 0; (i < all_images.length && all_images.length > items.length); i++){
+          items.push(
+            {
+              src: all_images[i].photo_url,
+              w: all_images[i].width,
+              h: all_images[i].height,
+              title: all_images[i].description
+            }
+          );
+        }
+      }
+
+      var options = {
+          history: false,
+          focus: true,
+
+          showAnimationDuration: 0,
+          hideAnimationDuration: 0
+      };
+      var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
+      gallery.init();
+    }
+  };
+</script>
+
+</body>
+</html>
